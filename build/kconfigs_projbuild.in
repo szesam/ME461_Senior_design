@@ -1,0 +1,5 @@
+source "C:/Users/samue/esp/esp-idf/components/app_update/Kconfig.projbuild"
+source "C:/Users/samue/esp/esp-idf/components/bootloader/Kconfig.projbuild"
+source "C:/Users/samue/esp/esp-idf/components/esptool_py/Kconfig.projbuild"
+source "C:/Users/samue/esp/esp-idf/components/partition_table/Kconfig.projbuild"
+source "C:/Users/samue/Desktop/BU_Spring_2021/ME461/fsr/blink/main/Kconfig.projbuild"

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+   <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <!-- <div id="chartContainer1" style="height: 300px; width: 90%;"></div>
+  <div id="chartContainer2" style="height: 300px; width: 90%;"></div>  -->
+  <div class="boxed">
+    <div id="pressure" style="font-size: 40px;"></div>
+  </div>
+  <div id="chartContainer1" style="width: 90%; height: 500px;display: inline-block;"></div>  
+  <script>
+    $(function () {
+    var socket = io();
+    
+    socket.on('dataMsg1', function(chartOptions1){
+      var chart1 = new CanvasJS.Chart("chartContainer1", chartOptions1);
+      chart1.render();
+    });
+
+    //update pressure box 
+    socket.on('dataMsg3', function(pressure){
+      document.getElementById('pressure').innerHTML = 'Pressure: ' + pressure;
+    });
+  });
+  </script> 
+  </body>
+</html>
+
